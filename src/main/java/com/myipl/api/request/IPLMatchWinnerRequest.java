@@ -1,20 +1,11 @@
-package com.myipl.domain.entity;
+package com.myipl.api.request;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class IPLMatchWinner implements Serializable {
+public class IPLMatchWinnerRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 
 	private String match1Winner;
 
@@ -22,13 +13,7 @@ public class IPLMatchWinner implements Serializable {
 
 	private LocalDate matchDate;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	private boolean isComputeLeaderboard=false;
 
 	public String getMatch1Winner() {
 		return match1Winner;
@@ -52,6 +37,14 @@ public class IPLMatchWinner implements Serializable {
 
 	public void setMatchDate(LocalDate matchDate) {
 		this.matchDate = matchDate;
+	}
+
+	public boolean isComputeLeaderboard() {
+		return isComputeLeaderboard;
+	}
+
+	public void setComputeLeaderboard(boolean isComputeLeaderboard) {
+		this.isComputeLeaderboard = isComputeLeaderboard;
 	}
 
 }

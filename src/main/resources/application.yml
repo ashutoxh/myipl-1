@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /myipl  #http://localhost:8080/myipl/swagger-ui.html
+
+spring:
+  profiles:
+   active: prod
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myipl?autoReconnect=true&rewriteBatchedStatements=true&createDatabaseIfNotExist=true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

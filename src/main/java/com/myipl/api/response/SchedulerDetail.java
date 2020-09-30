@@ -1,17 +1,28 @@
 package com.myipl.api.response;
 
-public class SchedulerDetail {
-	private String date;
-	
+import java.io.Serializable;
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+public class SchedulerDetail implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate date;
+
 	private String match1;
 
 	private String match2;
 
-	public String getDate() {
+	private String winner;
+
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -31,7 +42,12 @@ public class SchedulerDetail {
 		this.match2 = match2;
 	}
 
+	public String getWinner() {
+		return winner;
+	}
 
-
+	public void setWinner(String winner) {
+		this.winner = winner;
+	}
 
 }
